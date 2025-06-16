@@ -655,19 +655,25 @@ nav.animate-nav {
     transform: translateY(0);
   }
 }
-.hover-reveal-wrapper.active .hover-reveal-layer {
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 3;
+.hover-reveal-layer {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  pointer-events: none;
 }
 
-.hover-reveal-layer {
-  overflow-y: auto;
-  max-height: 100%; /* Ensure it doesn't spill off screen */
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: #3c3c3c;
+/* 👇 For Desktop Hover */
+.hover-reveal-wrapper:hover .hover-reveal-layer {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* 👇 For Mobile Tap via .active toggle */
+.hover-reveal-wrapper.active .hover-reveal-layer {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 
