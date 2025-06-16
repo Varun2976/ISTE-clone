@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ISTE:Indian Society for Technical Education</title>
+  <link rel="stylesheet" href="style.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/51b16df28e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  
+  <div id="creeper-intro">
+    <img src="asset/Creeper_static.png" alt="Creeper" id="creeper-img" />
+  </div>
+
+  
+
+  #Main website content
+  <div id="main-site" style="display: none;">
+    
+        
+        <nav>
+                <img src="asset/somaiya.png" width="120px" class="logo-img" />
+                <a href="#" class="Homer" >Home</a>
+                <a href="#" >About</a>
+                <a href="#">Our Story</a>
+                <a href="#">Team</a>
+                <a href="#">Events</a>
+                <a href="#">Gallery</a>
+                <a href="#">Contact Us  </a>
+            
+        </nav>
+    </div>
+       
+    <div class="About">
+        <div class="logo">
+            <video src="video.mp4" width="100%" height="100%" autoplay loop muted playsinline style="object-fit: cover;"></video>
+            <img src="asset/ISTElogo.png" width="150px">
+        <p>ISTE KJSSE</p>
+        </div>
+        
+    </div>
+    <div class="hover-reveal-wrapper">
+        <div class="hover-trigger">Hover to Reveal</div>
+        <div class="hover-reveal-layer">
+            <h1>ABOUT US</h1>
+            <h2>ISTE Student Chapter <span>MH-60</span></h2>
+            <p>The ISTE Student Chapter(MH 60) was established in 2000-2001 and it was inaugrated on Wednesday,24th January 2001 by the Chief guest Shri Pratap Borde, Principal MGM's JNCOE, Aurangabad. Shri Jayant B. Inamdar Chief Engg., MSRTC, Mumbai was present at the function as Guest of Honour. One of the major subject of the ISTE is to assist and to contribute the production and development of top quality professional engineers and technicians needed by the industries and other organisations.As ISTE council covers all the fields of engineering all students of KJSSE are members of ISTE council.</p>
+            <div class="Numbering">
+                <div class="Members">
+                    <img src="asset/steve.jpg" width="90px">
+                    <p id="names">Members</p>
+                    <p id="count">150+</p>
+                </div>
+                <div class="Events">
+                    <img src="asset/calendar.png" width=" 100px">
+                    <p id="names">Events</p>
+                    <p id="count">100+</p>
+                </div>
+                <div class="Workshops">
+                    <img src="asset/Crafting.png" width="90px">
+                    <p id="names">Workshops</p>
+                    <p id="count">100+</p>
+                </div>
+                <div class="Participants">
+                    <img src="asset/Pig.png" width="90px">
+                    <p id="names">Participants</p>
+                    <p id="count">1000+</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="gallery">
+        <h1>Gallery</h1>
+        <p>These are the photographs that have captured the beautiful journey of our council over the years. Browse through the photographs to know more about us!</p>
+        <button class="View">View Gallery</button>
+    </div>
+    <div class="Contact">
+        <h1>CONTACT US</h1>
+        <div class="form">
+            <img src="asset/Enderman.gif">
+            <div class="details">
+                <form>
+                    <div class="form-row">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="number">Phone Number:</label>
+                        <input type="tel" id="number" name="number" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>K. J. Somaiya School of Engineering, VidyaVihar</p>
+            <p>
+            Krisha Kapadia : 8976856057<br>
+            Garv Vyas : 9152777930
+            </p>
+            <div class="social">
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <!-- add more as needed -->
+            </div>
+            <p class="credits">Made with ❤️ by Varun Nair</p>
+        </div>
+    </footer>
+
+
+    
+  
+
+  
+  <script>
+    const creeper = document.getElementById('creeper-img');
+    const intro = document.getElementById('creeper-intro');
+    const boom = document.getElementById('boom');
+    const main = document.getElementById('main-site');
+
+    const gifPreload = new Image();
+    gifPreload.src = 'asset/Creeper2.gif';
+    creeper.addEventListener('click', () => {
+      setTimeout(() => {
+    boom.play();
+    }, 500);
+
+      // Replace static image with actual gif
+      const gif = document.createElement('img');
+      gif.src = 'asset/Creeper2.gif';
+      gif.id = 'creeper-img';
+      gif.style.width = '100vw';
+      gif.style.height = '100vh';
+      gif.style.objectFit = 'cover';
+
+      creeper.replaceWith(gif);
+
+      // Hide intro after GIF ends
+      setTimeout(() => {
+        intro.style.opacity = 0;
+        setTimeout(() => {
+          intro.style.display = 'none';
+          main.style.display = 'block';
+        }, 1000);
+      }, 1590); // Adjust to match your GIF duration
+    });
+    const trigger = document.querySelector('.hover-trigger');
+    const wrapper = document.querySelector('.hover-reveal-wrapper');
+
+    if (trigger && wrapper) {
+        trigger.addEventListener('click', () => {
+        wrapper.classList.toggle('active');
+        });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+html, body {
+ margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  cursor: url('asset/pickaxe_32x32.png') 16 16, auto;
+
+
+}
+
+/* Creeper Intro Fullscreen */
+#creeper-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
+}
+
+/* GIF fills screen */
+#creeper-img {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+nav{
+    display: flex;
+    
+    justify-content: flex-end;
+    align-items: center;
+    
+    font-size: 22px;
+    
+   
+    
+    
+    
+}
+nav a.Homer{
+    background-color:hsl(120, 54%, 50%) ;
+    color: black;
+}
+nav a{
+    display: flex;
+    height: 50px;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 20px;
+    color: hsl(120, 54%, 50%);
+    margin-top: px;
+    margin-bottom: 10px;
+    
+    margin-right: 2px;
+    font-family: Poppins;
+    
+    
+    
+    
+}
+nav a:hover{
+    background-color: hsl(120, 54%, 50%);
+    color: black;
+    cursor: url('asset/pickaxe_32x32.png') 16 16, auto;
+    
+}
+@font-face {
+  font-family: 'Minecraft';
+  src: url('fonts/Minecraft.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Heading';
+  src: url('fonts/Heading.ttf') format('truetype');
+}
+.About{
+    min-height: 100vh;
+    width: 100%;
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+    
+}
+.logo {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.logo video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.logo img {
+  z-index: 1;
+  position: relative;
+}
+
+.logo p {
+  font-family: Minecraft;
+  font-size: 5em;
+  color: white;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+
+
+.hover-reveal-wrapper {
+  position: relative;
+  width: 100%;
+  height: 800px; /* Adjust as needed */
+  margin-top: auto;
+  margin-bottom: 0;
+  align-self: flex-end;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+}
+
+/* Bottom panel (visible initially) */
+.hover-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  color: white;
+  font-family: Minecraft;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5em;
+  z-index: 2;
+  cursor: url('asset/pickaxe_32x32.png') 16 16, auto;
+  letter-spacing: 4px;
+  box-shadow: inset 0 0 10px  rgba(0, 0, 0, 0.927);
+  
+  
+}
+
+/* Reveal panel (on hover) */
+.hover-reveal-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #3c3c3c;
+  color: white;
+  font-family: Poppins;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  flex-direction: column;
+   
+}
+.hover-reveal-layer h1{
+    font-family: Heading;
+    font-size: 5em;
+    letter-spacing: 1px;
+}
+.hover-reveal-layer h2{
+    font-family: Poppins;
+    font-size: 1.5em;
+}
+.hover-reveal-layer p{
+    font-family: Poppins;
+    text-align: center;
+}
+.hover-reveal-layer span{
+    font-family: Poppins;
+    color:#00ff00;
+}
+
+.hover-reveal-wrapper:hover .hover-reveal-layer {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 3;
+}
+.Numbering{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+    padding-top: 60px;
+}
+.Numbering img{
+    transform: scale(1.3);
+}
+#names{
+    font-size: 20px;
+}
+#count{
+    font-size: 1.8em;
+    color: rgb(199, 89, 89);
+}
+.gallery{
+    background-image: url(asset/Gallery.jpg);
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+.gallery h1{
+    font-family: Heading;
+    font-size: 4em;
+    color: white;
+    padding-bottom: 50px;
+}
+.gallery p{
+    font-family: Minecraft;
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+}
+.View{
+    font-family: Consolas;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 40px;
+    padding: 10px 20px;
+    font-size: 1.4em;
+}
+.View:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.Contact{
+    background-image: url(asset/nether.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;       /* Makes it fill the screen */
+    background-position: center;
+    width: 100%;
+    height: 900px;
+    color: black;
+}
+
+.Contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Minecraft;
+    letter-spacing: 2px;
+    border-top: 5px solid black;
+}
+.Contact h1{
+    font-size: 4em;
+    
+}
+.form{
+    display: flex;
+    
+    justify-content:space-around;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-radius: 20px ;
+    padding-top: 50px;
+
+}
+.details{
+    padding-top: 100px;
+    background-color: rgba(0, 0, 0, 0.856);
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 40px;
+}
+.details form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.details .form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.details label {
+  width: 130px; /* or adjust as needed */
+  font-weight: 600;
+  color: rgb(183, 88, 231);
+  font-size: 1rem;
+  text-align: right;
+}
+
+.details input,
+.details textarea {
+  flex: 1;
+  padding: 10px 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Minecraft';
+  transition: border-color 0.3s ease;
+}
+
+.details input:focus,
+.details textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.details button[type="submit"] {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #490c59;
+  
+  color: white;
+  border: 4px solid rgb(153, 36, 153);
+  font-size: 1.5rem;
+    box-shadow: inset 0 0 10px  rgba(0, 0, 0, );
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.details button[type="submit"]:hover {
+  background-color: #a34caf;
+  border: 4px solid #490c59 ;
+  
+  
+}
+.form img{
+    padding-right: 90px;
+
+    
+    
+}
+.logo-img{
+    height: 50px;
+}
+.main_nav{
+    display: inline;
+}
+nav img{
+    padding-right:500px;
+}
+.site-footer {
+  background-color: #111;
+  color: #ccc;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: Poppins, sans-serif;
+}
+
+.footer-content p {
+  margin: 8px 0;
+}
+
+.footer-content .social {
+  margin: 12px 0;
+}
+
+.footer-content .social a {
+  color: #ccc;
+  margin: 0 10px;
+  font-size: 1.5em;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-content .social a:hover {
+  color: #00ff00; /* Minecraft green */
+}
+
+.footer-content .credits {
+  margin-top: 20px;
+  font-size: 0.9em;
+  opacity: 0.7;
+}
+/* Make all elements respect padding/border sizes */
+* {
+  box-sizing: border-box;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .logo p {
+    font-size: 2.5em;
+  }
+
+  .hover-reveal-wrapper {
+    height: 500px;
+    padding: 10px;
+  }
+
+  .hover-trigger {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .hover-reveal-layer h1 {
+    font-size: 2.5em;
+  }
+
+  .hover-reveal-layer h2 {
+    font-size: 1.2em;
+  }
+
+  .Numbering {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .gallery {
+    height: auto;
+    padding: 30px 10px;
+  }
+
+  .gallery h1 {
+    font-size: 2.5em;
+  }
+
+  .gallery p {
+    font-size: 1em;
+  }
+
+  .Contact {
+    height: auto;
+    padding: 20px;
+  }
+
+  .form {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .form img {
+    padding: 0;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+
+  .details {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .details .form-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .details label {
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .details input,
+  .details textarea {
+    width: 100%;
+  }
+
+  nav img {
+    padding-right: 0;
+    margin: auto;
+  }
+}
+.hover-reveal-wrapper.active .hover-reveal-layer {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 3;
+}
+
