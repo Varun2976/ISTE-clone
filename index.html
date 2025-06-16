@@ -216,10 +216,23 @@ creeper.addEventListener('click', () => {
     document.addEventListener('DOMContentLoaded', function () {
     const wrapper = document.querySelector('.hover-reveal-wrapper');
 
-    // Only activate toggle on small screens (mobile)
     if (window.innerWidth <= 768) {
-      wrapper.addEventListener('click', function () {
+      wrapper.addEventListener('click', function (e) {
+        // Only toggle if clicking the trigger (not already active)
         wrapper.classList.toggle('active');
+        e.stopPropagation(); // Prevent click bubbling
+      });
+
+      // Hide it when clicking outside
+      document.addEventListener('click', function (e) {
+        if (!wrapper.contains(e.target)) {
+          wrapper.classList.remove('active');
+        }
+      });
+
+      // Optional: hide on scroll
+      window.addEventListener('scroll', () => {
+        wrapper.classList.remove('active');
       });
     }
   });
