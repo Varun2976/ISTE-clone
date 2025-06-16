@@ -213,6 +213,16 @@ creeper.addEventListener('click', () => {
     );
 
     galleryObserver.observe(gallerySection);
+    document.addEventListener('DOMContentLoaded', function () {
+    const wrapper = document.querySelector('.hover-reveal-wrapper');
+
+    // Only activate toggle on small screens (mobile)
+    if (window.innerWidth <= 768) {
+      wrapper.addEventListener('click', function () {
+        wrapper.classList.toggle('active');
+      });
+    }
+  });
 
 
   </script>

@@ -655,6 +655,19 @@ nav.animate-nav {
     transform: translateY(0);
   }
 }
+.hover-reveal-wrapper.active .hover-reveal-layer {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 3;
+  transition: opacity 0.6s ease; /* smoother fade-in/out */
+}
+.hover-reveal-layer {
+  overflow-y: auto;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
 
 
 
