@@ -166,8 +166,8 @@ creeper.addEventListener('click', () => {
       // ✅ Start navbar animation immediately
       const nav = document.querySelector('nav');
       nav.classList.add('animate-nav');
-    }, 300); // Make this short for faster transition
-  }, 1590); // After creeper gif
+    }, 300); 
+  }, 1590); 
 });
 
 
@@ -184,12 +184,12 @@ creeper.addEventListener('click', () => {
             entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('reveal');
-                observer.unobserve(entry.target); // ensures animation only happens once
+                observer.unobserve(entry.target);
             }
             });
         },
         {
-            threshold: 0.2 // Trigger when 20% of the element is in view
+            threshold: 0.2 
         }
         );
 
