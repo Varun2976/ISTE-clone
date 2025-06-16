@@ -23,18 +23,21 @@
   <div id="main-site" style="display: none;">
     
         
-        <nav>
-                <img src="asset/somaiya.png" width="120px" class="logo-img" />
-                <a href="#" class="Homer" >Home</a>
-                <a href="#" >About</a>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <img src="asset/somaiya.png" alt="Somaiya Logo" class="logo-img" />
+            </div>
+            <div class="nav-links">
+                <a href="#" class="Homer">Home</a>
+                <a href="#">About</a>
                 <a href="#">Our Story</a>
                 <a href="#">Team</a>
                 <a href="#">Events</a>
                 <a href="#">Gallery</a>
-                <a href="#">Contact Us  </a>
-            
+                <a href="#">Contact Us</a>
+            </div>
         </nav>
-    </div>
+</div>
        
     <div class="About">
         <div class="logo">
@@ -45,7 +48,7 @@
         
     </div>
     <div class="hover-reveal-wrapper">
-        <div class="hover-trigger">Hover to Reveal</div>
+        <div class="hover-trigger">Hover to Reveal !!!</div>
         <div class="hover-reveal-layer">
             <h1>ABOUT US</h1>
             <h2>ISTE Student Chapter <span>MH-60</span></h2>
@@ -172,6 +175,42 @@
         wrapper.classList.toggle('active');
         });
     }
+            const contactObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+                observer.unobserve(entry.target); // ensures animation only happens once
+            }
+            });
+        },
+        {
+            threshold: 0.2 // Trigger when 20% of the element is in view
+        }
+        );
+
+        // Target elements inside .Contact
+        const contactElements = document.querySelectorAll('.Contact .form, .Contact h1');
+        contactElements.forEach(el => contactObserver.observe(el));
+        const gallerySection = document.querySelector('.gallery');
+
+    const galleryObserver = new IntersectionObserver(
+    (entries, observer) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            gallerySection.classList.add('reveal');
+            observer.unobserve(entry.target);
+        }
+        });
+    },
+    {
+        threshold: 0.3
+    }
+    );
+
+    galleryObserver.observe(gallerySection);
+
+
   </script>
 </body>
 </html>
