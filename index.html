@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ISTE:Indian Society for Technical Education</title>
+  <link rel="preload" href="asset/Creeper2.gif" as="image">
+
   <link rel="stylesheet" href="style.css" />
    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -137,36 +139,38 @@
   
   <script>
     const creeper = document.getElementById('creeper-img');
-    const intro = document.getElementById('creeper-intro');
+const intro = document.getElementById('creeper-intro');
+const main = document.getElementById('main-site');
+const gifPreload = new Image();
+gifPreload.src = 'asset/Creeper2.gif';
+
+creeper.addEventListener('click', () => {
+  setTimeout(() => {
     const boom = document.getElementById('boom');
-    const main = document.getElementById('main-site');
+    if (boom) boom.play();
+  }, 500);
 
-    const gifPreload = new Image();
-    gifPreload.src = 'asset/Creeper2.gif';
-    creeper.addEventListener('click', () => {
-      setTimeout(() => {
-    boom.play();
-    }, 500);
+  // Swap to GIF
+  creeper.src = 'asset/Creeper2.gif';
+  creeper.style.width = '100vw';
+  creeper.style.height = '100vh';
+  creeper.style.objectFit = 'cover';
 
-      // Replace static image with actual gif
-      const gif = document.createElement('img');
-      gif.src = 'asset/Creeper2.gif';
-      gif.id = 'creeper-img';
-      gif.style.width = '100vw';
-      gif.style.height = '100vh';
-      gif.style.objectFit = 'cover';
+  setTimeout(() => {
+    intro.style.opacity = 0;
 
-      creeper.replaceWith(gif);
+    setTimeout(() => {
+      intro.style.display = 'none';
+      main.style.display = 'block';
 
-      // Hide intro after GIF ends
-      setTimeout(() => {
-        intro.style.opacity = 0;
-        setTimeout(() => {
-          intro.style.display = 'none';
-          main.style.display = 'block';
-        }, 1000);
-      }, 1590); // Adjust to match your GIF duration
-    });
+      // ✅ Start navbar animation immediately
+      const nav = document.querySelector('nav');
+      nav.classList.add('animate-nav');
+    }, 300); // Make this short for faster transition
+  }, 1590); // After creeper gif
+});
+
+
     const trigger = document.querySelector('.hover-trigger');
     const wrapper = document.querySelector('.hover-reveal-wrapper');
 
